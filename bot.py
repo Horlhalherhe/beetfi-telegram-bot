@@ -1,3 +1,4 @@
+
 import os
 import asyncio
 import logging
@@ -56,20 +57,20 @@ Bet smart. Stay focused. Welcome to BEETFI 🚀
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💰 Weekly Subscription: {ENTRY_FEE} USDT (Solana Network)
-⏰ Duration: 7 days
+💰 *Weekly Subscription:* {ENTRY_FEE} USDT (Solana Network)
+⏰ *Duration:* 7 days
 
-📍 Payment Address (tap to copy):
-{YOUR_WALLET_ADDRESS}
+📍 *Payment Address (tap to copy):*
+`{YOUR_WALLET_ADDRESS}`
 
-📋 How to Subscribe:
+📋 *How to Subscribe:*
 1. Tap the address above to copy it
 2. Send exactly {ENTRY_FEE} USDT on Solana network
 3. Click "Verify Payment" button below
 4. Send your transaction hash/signature
 5. Get instant access to Beetfi Channel for 7 days
 
-⚠️ Important:
+⚠️ *Important:*
 • Send USDT on Solana network only (SPL Token)
 • Amount must be exactly: {ENTRY_FEE} USDT
 • Access expires after 7 days
@@ -80,7 +81,7 @@ Need help? Use /help"""
         keyboard = [[InlineKeyboardButton("✅ Verify Payment", callback_data='verify_payment')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
-        await update.message.reply_text(welcome_message, reply_markup=reply_markup)
+        await update.message.reply_text(welcome_message, parse_mode='Markdown', reply_markup=reply_markup)
         
         pending_payments[user_id] = {
             'amount': ENTRY_FEE,
